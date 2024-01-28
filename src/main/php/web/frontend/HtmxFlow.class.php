@@ -34,7 +34,7 @@ class HtmxFlow extends Flow {
    * @return var
    */
   public function authenticate($request, $response, $session) {
-    if ('true' === $request->header('Hx-Request')) {
+    if ('true' === $request->header('HX-Request')) {
       $response->answer(401);
       $response->header('HX-Trigger', 'authenticationexpired');
       return null;
