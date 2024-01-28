@@ -9,6 +9,7 @@ use web\{Request, Response};
 
 class HtmxFlowTest {
 
+  /** Calls authenticate() method and returns response */
   private function authenticate(array $headers, Flow $flow): Response {
     $res= new Response(new TestOutput());
     $flow->authenticate(new Request(new TestInput('GET', '/', $headers)), $res, null);
