@@ -40,7 +40,7 @@ class HtmxFlowTest {
 
   #[Test]
   public function returns_error_code_and_triggers_authenticationexpired_event() {
-    $res= $this->authenticate(['Hx-Request' => 'true'], new HtmxFlow(new class() extends Flow {
+    $res= $this->authenticate(['HX-Request' => 'true'], new HtmxFlow(new class() extends Flow {
       public function authenticate($request, $response, $session) {
         throw new IllegalStateException('Never called');
       }
