@@ -53,7 +53,7 @@ class HtmxFlowTest {
   #[Test]
   public function delegates_refreshing() {
     $flow= new HtmxFlow(new class() extends Flow {
-      public function refresh($claims) {
+      public function refresh(array $claims) {
         return newinstance(Authorization::class, [], [
           'claims' => function() use($claims) { return ['token' => 'new'] + $claims; }
         ]);
