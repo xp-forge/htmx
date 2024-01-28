@@ -2,7 +2,7 @@
 
 use lang\IllegalStateException;
 use test\{Assert, Test};
-use web\auth\Flow;
+use web\auth\{Authorization, Flow};
 use web\frontend\HtmxFlow;
 use web\io\{TestInput, TestOutput};
 use web\{Request, Response};
@@ -48,5 +48,25 @@ class HtmxFlowTest {
 
     Assert::equals(401, $res->status());
     Assert::equals('authenticationexpired', $res->headers()['HX-Trigger']);
+  }
+
+  #[Test]
+  public function delegates_refreshing() {
+    $flow= new HtmxFlow(new class() extends Flow {
+      public function refresh($claims) {
+        return newinstance(Authorization::class, [], [
+          'claims' => function() use($claims) { return ['token' => 'new'] + $claims; }
+        ]);
+      }
+
+      public function authenticate($request, $response, $session) {
+        // NOOP
+      }
+    });
+
+    Assert::equals(
+      ['token' => 'new', 'refresh' => '6100'],
+      $flow->refresh(['token' => 'old', 'refresh' => '6100'])->claims()
+    );
   }
 }
