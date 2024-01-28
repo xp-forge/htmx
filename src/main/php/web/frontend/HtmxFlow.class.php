@@ -8,6 +8,7 @@ use web\auth\Flow;
  * an `authenticationexpired` event is triggered instead of redirecting.
  *
  * @see  https://htmx.org/reference/#headers
+ * @test web.frontend.unittest.HtmxFlowTest
  */
 class HtmxFlow extends Flow {
   private $delegate;
