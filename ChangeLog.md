@@ -3,6 +3,13 @@ HTMX for XP web frontends change log
 
 ## ?.?.? / ????-??-??
 
+## 0.3.0 / 2024-03-29
+
+* Dropped support for PHP 7.0 - 7.3, step 1 of xp-framework/rfc#343
+  (@thekid)
+* Made compatible with https://github.com/xp-forge/web-auth version 5.0
+  (@thekid)
+
 ## 0.2.0 / 2024-03-24
 
 * Made compatible with XP 12 - @thekid
