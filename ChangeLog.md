@@ -3,6 +3,12 @@ HTMX for XP web frontends change log
 
 ## ?.?.? / ????-??-??
 
+## 1.0.0 / 2025-02-03
+
+* Delegated URL handling, namespacing and user information to underyling
+  flow instances.
+  (@thekid)
+
 ## 0.3.0 / 2024-03-29
 
 * Dropped support for PHP 7.0 - 7.3, step 1 of xp-framework/rfc#343

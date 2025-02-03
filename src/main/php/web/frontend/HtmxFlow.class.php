@@ -1,6 +1,6 @@
 <?php namespace web\frontend;
 
-use web\auth\Flow;
+use web\auth\{Flow, URL, UserInfo};
 
 /**
  * Wraps around any authentication flow and ensures that if there is the
@@ -15,6 +15,48 @@ class HtmxFlow extends Flow {
 
   /** Creates a new instance, wrapping around a given flow */
   public function __construct(Flow $delegate) { $this->delegate= $delegate; }
+
+  /**
+   * Sets session namespace for this flow. Used to prevent conflicts
+   * in session state with multiple OAuth flows in place.
+   *
+   * @param  string $namespace
+   * @return self
+   */
+  public function namespaced($namespace) {
+    $this->delegate->namespaced($namespace);
+    return $this;
+  }
+
+  /**
+   * Targets a given URL
+   *
+   * @param  web.auth.URL $url
+   * @return self
+   */
+  public function target(URL $url) {
+    $this->delegate->target($url);
+    return $this;
+  }
+
+  /**
+   * Returns URL
+   *
+   * @param  bool $default
+   * @return ?web.auth.URL
+   */
+  public function url($default= false): URL {
+    return $this->delegate->url($default);
+  }
+
+  /**
+   * Returns a user info instance
+   *
+   * @return web.auth.UserInfo
+   */
+  public function userInfo(): UserInfo {
+    return $this->delegate->userInfo();
+  }
 
   /**
    * Refreshes access token given a refresh token if necessary.
