@@ -3,6 +3,11 @@ HTMX for XP web frontends change log
 
 ## ?.?.? / ????-??-??
 
+## 1.1.0 / 2025-05-05
+
+* Added PHP 8.5 to the test matrix - @thekid
+* Made compatible with `frontend` and `web-auth` major releases - @thekid
+
 ## 1.0.0 / 2025-02-03
 
 * Delegated URL handling, namespacing and user information to underyling
