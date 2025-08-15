@@ -31,10 +31,10 @@ class HtmxFlow extends Flow {
   /**
    * Targets a given URL
    *
-   * @param  web.auth.URL $url
+   * @param  string|web.auth.URL $url
    * @return self
    */
-  public function target(URL $url) {
+  public function target($url) {
     $this->delegate->target($url);
     return $this;
   }
@@ -45,7 +45,7 @@ class HtmxFlow extends Flow {
    * @param  bool $default
    * @return ?web.auth.URL
    */
-  public function url($default= false): URL {
+  public function url($default= false): ?URL {
     return $this->delegate->url($default);
   }
 
