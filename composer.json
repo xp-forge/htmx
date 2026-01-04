@@ -16,5 +16,6 @@
   },
   "autoload" : {
     "files" : ["src/main/php/autoload.php"]
-  }
+  },
+  "abandoned": "xp-forge/web-auth"
 }
