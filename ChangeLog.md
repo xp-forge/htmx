@@ -3,6 +3,10 @@ HTMX for XP web frontends change log
 
 ## ?.?.? / ????-??-??
 
+## 1.2.1 / 2026-01-04
+
+* Made compatible with `xp-forge/web-auth` version 7.0 - @thekid
+
 ## 1.2.0 / 2025-08-15
 
 * Upgraded `xp-forge/web-auth` dependency - @thekid
