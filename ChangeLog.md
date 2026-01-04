@@ -5,6 +5,7 @@ HTMX for XP web frontends change log
 
 ## 1.2.1 / 2026-01-04
 
+* Added PHP 8.6 to the test matrix - @thekid
 * Made compatible with `xp-forge/web-auth` version 7.0 - @thekid
 
 ## 1.2.0 / 2025-08-15
